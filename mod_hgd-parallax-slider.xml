@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.2.4" client="site" method="upgrade">
+    <name>HGD - Parallax Slider</name>
+    <author>Holger Genth -Dienstleistungen-</author>
+    <authorUrl>https://holger-genth.de</authorUrl>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.1.1</version>
+    <description>MOD_HGD_PARALLAX_SLIDER</description>
+    <updateservers>
+      <server type="extension" priority="1" element="mod_hgd-parallax-slider" name="HGD - Joomla Extensions Update Server">https://joomla.grenni.de/data/hgd/modules/parallax-slider.xml</server>
+    </updateservers>
+    <files>
+        <filename>mod_hgd-parallax-slider.xml</filename>
+        <filename module="mod_hgd-parallax-slider">mod_hgd-parallax-slider.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <folder>language</folder>
+    </files>
+    <languages>
+      <language tag="de-DE">language/de-DE/de-DE.mod_hgd-parallax-slider.ini</language>
+      <language tag="de-DE">language/de-DE/de-DE.mod_hgd-parallax-slider.sys.ini</language>
+      <language tag="en-EN">language/en-GB/en-GB.mod_hgd-parallax-slider.ini</language>
+      <language tag="en-EN">language/en-GB/en-GB.mod_hgd-parallax-slider.sys.ini</language>
+    </languages>
+    <config>
+      <fields name="params">
+        <fieldset name="basic">
+          <field name="slider-options" type="spacer" default="" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_SPACER_OPTIONS_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_SPACER_OPTIONS_DESC" />
+          <field name="width" type="text" default="100%" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_WIDTH_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_WIDTH_DESC" filter="STRING" />
+          <field name="height" type="text" default="auto" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_HEIGHT_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_HEIGHT_DESC" filter="STRING" />
+          <field name="max_width" type="text" default="1920" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_MAXWIDTH_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_MAXWIDTH_DESC" filter="INT" />
+          <field name="max_height" type="text" default="0" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_MAXHEIGHT_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_MAXHEIGHT_DESC" filter="INT" />
+          <field name="sizeFactor" type="text" default="1.2" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_SIZEFACTOR_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_SIZEFACTOR_DESC" filter="DOUBLE" />
+          <field name="fov" type="text" default="147" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_FOV_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_FOV_DESC" filter="FLOAT" />
+          <field name="layer_count" type="integer" default="2" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_LAYERCOUNT_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_LAYERCOUNT_DESC" first="1" last="5" step="1" />
+
+          <field name="layers" type="spacer" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_SPACER_LAYERS1_LABEL" showon="layer_count:1[OR]layer_count:2[OR]layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+          <field name="image1" type="media" directory="." preview="true" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_DESC" showon="layer_count:1[OR]layer_count:2[OR]layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+          <field name="distance1" type="number" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_DESC" min="0" max="10" step="1" showon="layer_count:1[OR]layer_count:2[OR]layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+
+          <field name="layers" type="spacer" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_SPACER_LAYERS2_LABEL" showon="layer_count:2[OR]layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+          <field name="image2" type="media" directory="." preview="true" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_DESC" showon="layer_count:2[OR]layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+          <field name="distance2" type="number" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_DESC" min="0" max="10" step="1" showon="layer_count:2[OR]layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+
+          <field name="layers" type="spacer" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_SPACER_LAYERS3_LABEL" showon="layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+          <field name="image3" type="media" directory="." preview="true" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_DESC" showon="layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+          <field name="distance3" type="number" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_DESC" min="0" max="10" step="1" showon="layer_count:3[OR]layer_count:4[OR]layer_count:5"/>
+
+          <field name="layers" type="spacer" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_SPACER_LAYERS4_LABEL" showon="layer_count:4[OR]layer_count:5"/>
+          <field name="image4" type="media" directory="." preview="true" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_DESC" showon="layer_count:4[OR]layer_count:5"/>
+          <field name="distance4" type="number" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_DESC" min="0" max="10" step="1" showon="layer_count:4[OR]layer_count:5"/>
+
+          <field name="layers" type="spacer" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_SPACER_LAYERS5_LABEL" showon="layer_count:5"/>
+          <field name="image5" type="media" directory="." preview="true" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_IMAGE_DESC" showon="layer_count:5"/>
+          <field name="distance5" type="number" label="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_LABEL" description="MOD_HGD_PARALLAX_SLIDER_CONFIG_DISTANCE_DESC" min="0" max="10" step="1" showon="layer_count:5"/>
+        </fieldset>
+      </fields>
+    </config>
+</extension>
